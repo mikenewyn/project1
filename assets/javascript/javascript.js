@@ -5,7 +5,15 @@ var ingredients = [];
 
 var currentUser = "Guinea Pig";
 
-var renameThisApiKeyVariableLater = "first api key";
+// app ID and api key for Edamam//
+var app_Id = "d02d745b";
+var renameThisApiKeyVariableLater = "4ffb87ac0809755abbda1cd0bebdb069	—";
+$.ajax({
+    url: "https://api.edamam.com/api/nutrition-details?app_id=' + app_id + '&app_key=' + app_key",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
 
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
 
@@ -102,6 +110,10 @@ function recipeFinder() {
     // });
 
 }
+//on click event for recipepuppy below//
+//http://www.recipepuppy.com/api/. 
+//http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3 
+
 
 // function recipeLister() {
 //     // put recipes into #recipe-box
@@ -115,10 +127,7 @@ function recipeFinder() {
 //     // for saving favorite recipes
 // }
 
-// The api is accessible at http://www.recipepuppy.com/api/. 
 
-// For example:
-// http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3 
 
 // Optional Parameters:
 // i : comma delimited ingredients
