@@ -100,8 +100,11 @@ function recipeFinder() {
 //     <input type="submit" value="Search" style="font-size:11px;" /> <br />Powered by < a href = "http://www.recipepuppy.com" style = "font-size:10px;" > Recipe Puppy</a ></form >
 // >>>>>>> origin/mike.newyn
 
+
+
+
 // click on span to delete ingredient
-$("span").click(function(event){
+$("ul").on("click", "span", function(event){
     $(this).parent().fadeOut(500,function(){
         $(this).remove();
     });
