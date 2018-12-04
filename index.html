@@ -6,47 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>What to cook?!</title>
+
+    <title>Fresh & Delicious</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
 <body>
     <!-- //header -->
-    <section class="section">
+
+
+    <nav class="navbar" role="navigation" aria-label="main navigation" class="section container">
+        <div class="navbar-brand">
+            <h1 class="title">
+                Create a meal with <em> What'Cha Got</em>!
+            </h1>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <!-- Add buttons to sign up and log in -->
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                        Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+    <!-- <section class="section">
         <div class="container">
             <h1 class="title">
-                    our web page name
+                    Create a meal with  <em> Fresh & Delicious</em>!  
             </h1>
             <p class="subtitle">
-               Create a meal with  <strong> Bon Appetit</strong>!
+                
             </p>
         </div>
-    </section>
+    </section> -->
 
 
-    <!-- container -->
+    <!-- container of all tiles  -->
     <div class="container">
         <div class="notification">
             <!-- top left tile where our serch button and ingredient list will be  -->
+
             <div class="tile is-ancestor">
                 <div class="tile is-4 is-vertical is-parent">
+                    <div id="ingredientContainer">
                     <div class="tile is-child box">
-                        <p class="title">Whats in my fridge?</p>
+                        <p class="title">What's in my fridge?</p>
 
                         <div class="control">
                             <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
+                            <ul>
+                                <li><span>X</span>Ice</li>
+                            </ul>
                         </div>
                         <br>
                         <div class="control">
                             <button id="submitButton" class="button is-primary">Submit</button>
                         </div>
                     </div>
+                </div>
                     <!-- botton left tile where our top recepies will populate -->
                     <div class="tile is-child box">
-                        <p class="title">     </p>
-                        <p>“One cannot think well, love well, sleep well, if one has not dined well.” 
-                                ― Virginia Woolf.</p>
+                        <p class="title"> </p>
+                        <p>“One cannot think well, love well, sleep well, if one has not dined well.”
+                            ― Virginia Woolf.</p>
                     </div>
                 </div>
                 <div class="tile is-parent">
@@ -72,7 +112,8 @@
         </div>
     </div>
 
-
+    <footer class="" style="background-color:gray;margin-top: 20%;bottom: 0;left: 0;right: 0; position: fixed;"> &copy;
+        Copyright 2018 Fresh & Delicious</footer>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script>
