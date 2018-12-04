@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>project 1</title>
 </head>
+
 <body>
-    
+
+    <div>
+        <h1>header</h1>
+    </div>
+
+    <div id="main">
+        <div id="left-column">
+            <div id="search-box">
+                <form action="recipe-finder">
+                    search form here
+                </form>
+            </div>
+            <br>
+            <br>
+            <div id="ingredients-list">
+                current ingredients with delete buttons
+            </div>
+            <br>
+            <br>
+            <div id="common-ingredients">
+                commonly searched for ingredients
+            </div>
+
+        </div>
+        <div id="recipe-box">
+            leave this area blank, populate dynamically with search results.
+        </div>
+    </div>
+
+    <div id="footer">
+        footer
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
+            authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
+            databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
+            projectId: "whats-in-my-fridge-335ea",
+            storageBucket: "whats-in-my-fridge-335ea.appspot.com",
+            messagingSenderId: "82405487027"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="assets/javascript/javascript.js"></script>
+
 </body>
+
 </html>
