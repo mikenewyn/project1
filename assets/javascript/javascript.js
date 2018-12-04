@@ -18,6 +18,13 @@ $.ajax({
 
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
 
+$.ajax({
+    url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
+
 function ingredientLister() {
     // add ingredient to search
 }
