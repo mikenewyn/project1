@@ -172,3 +172,19 @@ function recipeFinder() {
 //     <input type="text" name="i" id="i" value="Enter ingredients separated by commas" size=31 style = "color:gray;font-size:11px;" onfocus = "if(this.style.color=='gray'){this.style.color='black';this.value='';}" onblur = "if(this.value==''){this.style.color='gray';this.value='Enter ingredients separated by commas';}" /> 
 //     <input type="submit" value="Search" style="font-size:11px;" /> <br />Powered by < a href = "http://www.recipepuppy.com" style = "font-size:10px;" > Recipe Puppy</a ></form >
 // >>>>>>> origin/mike.newyn
+
+// click on span to delete ingredient
+$("span").click(function(event){
+    $(this).parent().fadeOut(500,function(){
+        $(this).remove();
+    });
+    event.stopPropagation();
+});
+
+$("input").keypress(function(event){
+ if (event.which === 13){
+    var addIngredient = $(this).val();
+    $(this).val("");
+    $("ul").append("<li><span> X </span> " + addIngredient + "<li>")
+ }
+})
