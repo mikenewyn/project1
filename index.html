@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="assets/javascript/javascript.js"></script>
 </head>
 
 <body>
@@ -67,9 +68,14 @@
 
             <div class="tile is-ancestor">
                 <div class="tile is-4 is-vertical is-parent">
+<<<<<<< HEAD
+                    <div class="tile is-child box" id="searchBox">
+                        <p class="title">Whats in my fridge?</p>
+=======
                     <div id="ingredientContainer">
                     <div class="tile is-child box">
                         <p class="title">What's in my fridge?</p>
+>>>>>>> origin/production
 
                         <div class="control">
                             <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
@@ -116,20 +122,20 @@
     <footer class="" style="background-color:gray;margin-top: 20%;bottom: 0;left: 0;right: 0; position: fixed;"> &copy;
         Copyright 2018 Fresh & Delicious</footer>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
-            authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
-            databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
-            projectId: "whats-in-my-fridge-335ea",
-            storageBucket: "whats-in-my-fridge-335ea.appspot.com",
-            messagingSenderId: "82405487027"
-        };
-        firebase.initializeApp(config);
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
+        authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
+        databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
+        projectId: "whats-in-my-fridge-335ea",
+        storageBucket: "whats-in-my-fridge-335ea.appspot.com",
+        messagingSenderId: "82405487027"
+      };
+      firebase.initializeApp(config);
     </script>
-    <script src="assets/javascript/javascript.js"></script>
 </body>
 
 </html>

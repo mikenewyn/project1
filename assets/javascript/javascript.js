@@ -1,11 +1,11 @@
 // <<<<<<< HEAD
-var newIngredient = "";
+var newIngredient = "cheese";
 
-var ingredients = [];
 
 var currentUser = "Guinea Pig";
 
 // app ID and api key for Edamam//
+
 var app_Id = "d02d745b";
 var renameThisApiKeyVariableLater = "4ffb87ac0809755abbda1cd0bebdb069	—";
 $.ajax({
@@ -15,19 +15,94 @@ $.ajax({
     console.log(response);
   });
 
+
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
 
-function ingredientLister() {
-    // add ingredient to search
+$(document).on("click", "#submitButton", function () {
+    // ingredientLister();
+    databaseIngredients();
+});
+
+
+// function ingredientLister() {
+//     $("#submitButton").on("click", function (event) {
+//         event.preventdefault();
+//         var newIngredient = $("#ingredientInput").val().trim();
+//         var ingredients = [];
+//         ingredients.append(newIngredient);
+//         var a = "<ul id='userIngredients' style='list-style-type:none'>"
+//         for (i = 0; i < ingredients.length; i++) {
+//             a.append("<li>" + ingredients[i]);
+//         }
+//         $("#searchBox").append(a);
+
+//     // add ingredient to search
+// })
+
+// name = $("#name-input").val().trim();
+
+
+function databaseIngredients() {
+    var database = firebase.database();
+    var addedIngredient = $("#ingredientInput").val().trim();
+
+    database.ref().push({
+        commonIngredients: addedIngredient,
+    })
+
+
+    // var myUserId = firebase.auth().currentUser.uid;
+    // var topUserPostsRef = firebase.database().ref('user-posts/' + myUserId).orderByChild('starCount');
+
+
+    // for (i = 0; i < newIngredient; i++) {
+    //     if (database.commonIngredients.indexOF(addedingredient) = -1) {
+    //         database.commonIngredients().push(addedingredient);
+    //     }
+    //     else {
+    //         database.commonIngredients.addedingredient++;
+    //     }
+    //     }
 }
+
+// var database = firebase.database();
+// var clickCounter = 0;
+
+// $("#click-button").on("click", function() {
+//   clickCounter++;
+//   database.ref().set({
+//     clickCount: clickCounter
+//   });
+// });
+
+// // MAIN PROCESS + INITIAL CODE
+// // --------------------------------------------------------------------------------
+
+// database.ref().on("value", function(snapshot) {
+//   console.log(snapshot.val());
+//   $("#click-value").text(snapshot.val().clickCount);
+//   clickCounter = snapshot.val().clickCount;
+// }, function(errorObject) {
+//   console.log("The read failed: " + errorObject.code);
+// });
+
+
+// }
 
 function ingredientCounter() {
     // adds ingredients to database
 }
 
-function popularIngredients() {
-    // gets the most commonly searched for ingredients
-}
+// function popularIngredients() {
+//     // gets the most commonly searched for ingredients
+//     var mostCommonIngredients = database.ref("commonIngredients").orderByChild("searched").limitToFirst(10);
+//     for (i = 0; i < 10; i ++) {
+//         var a = mostCommonIngredients[i];
+//         var b = ("<li>")
+//         b.append(a)
+//         $("#commonIngredientBox").append(b)
+//     }
+// }
 
 function recipeFinder() {
     // search for recipes
@@ -64,7 +139,7 @@ function recipeFinder() {
     //         });
     //     }
     // });
-    
+
 }
 //on click event for recipepuppy below//
 //http://www.recipepuppy.com/api/. 
