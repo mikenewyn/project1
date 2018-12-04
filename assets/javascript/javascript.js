@@ -10,7 +10,51 @@ var renameThisApiKeyVariableLater = "first api key";
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
 
 function ingredientLister() {
+    $("#submitButton").on("click", function (event) {
+        event.preventdefault();
+        newIngredient = $("#ingredientInput").val();
+        $("#ingredientInput").append("<ul id='userIngredients' style='list-style-type:none'><ul>" + newIngredient);
+
     // add ingredient to search
+})
+
+// function databaseIngredients() {
+//     var database = firebase.database();
+//     var addedingredient = newIngredient;
+
+//     $("#submitButton").on("click", function () {
+//         for (i = 0; i < newIngredient; i++) {
+//             if (database.commonIngredients.indexOF(addedingredient) = -1) {
+//                 database.commonIngredients().push(addedingredient);
+//             }
+//             else {
+//                 database.commonIngredients.addedingredient++;
+//             }
+//         }
+//     }
+
+    // var database = firebase.database();
+    // var clickCounter = 0;
+
+    // $("#click-button").on("click", function() {
+    //   clickCounter++;
+    //   database.ref().set({
+    //     clickCount: clickCounter
+    //   });
+    // });
+
+    // // MAIN PROCESS + INITIAL CODE
+    // // --------------------------------------------------------------------------------
+
+    // database.ref().on("value", function(snapshot) {
+    //   console.log(snapshot.val());
+    //   $("#click-value").text(snapshot.val().clickCount);
+    //   clickCounter = snapshot.val().clickCount;
+    // }, function(errorObject) {
+    //   console.log("The read failed: " + errorObject.code);
+    // });
+
+
 }
 
 function ingredientCounter() {
@@ -56,7 +100,7 @@ function recipeFinder() {
     //         });
     //     }
     // });
-    
+
 }
 
 // function recipeLister() {
