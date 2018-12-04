@@ -1,11 +1,11 @@
 // <<<<<<< HEAD
-var newIngredient = "";
+var newIngredient = "cheese";
 
-var ingredients = [];
 
 var currentUser = "Guinea Pig";
 
 // app ID and api key for Edamam//
+
 var app_id = "d02d745b";
 var app_key = "a27da899f17064b2672f7c38fa09c34e";
 
@@ -29,13 +29,44 @@ function ingredientLister() {
     // add ingredient to search
 }
 
+// var database = firebase.database();
+// var clickCounter = 0;
+
+// $("#click-button").on("click", function() {
+//   clickCounter++;
+//   database.ref().set({
+//     clickCount: clickCounter
+//   });
+// });
+
+// // MAIN PROCESS + INITIAL CODE
+// // --------------------------------------------------------------------------------
+
+// database.ref().on("value", function(snapshot) {
+//   console.log(snapshot.val());
+//   $("#click-value").text(snapshot.val().clickCount);
+//   clickCounter = snapshot.val().clickCount;
+// }, function(errorObject) {
+//   console.log("The read failed: " + errorObject.code);
+// });
+
+
+// }
+
 function ingredientCounter() {
     // adds ingredients to database
 }
 
-function popularIngredients() {
-    // gets the most commonly searched for ingredients
-}
+// function popularIngredients() {
+//     // gets the most commonly searched for ingredients
+//     var mostCommonIngredients = database.ref("commonIngredients").orderByChild("searched").limitToFirst(10);
+//     for (i = 0; i < 10; i ++) {
+//         var a = mostCommonIngredients[i];
+//         var b = ("<li>")
+//         b.append(a)
+//         $("#commonIngredientBox").append(b)
+//     }
+// }
 
 function recipeFinder() {
     // search for recipes
@@ -72,7 +103,7 @@ function recipeFinder() {
     //         });
     //     }
     // });
-    
+
 }
 //on click event for recipepuppy below//
 //http://www.recipepuppy.com/api/. 
