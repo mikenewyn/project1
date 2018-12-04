@@ -6,8 +6,9 @@ var ingredients = [];
 var currentUser = "Guinea Pig";
 
 // app ID and api key for Edamam//
-var app_Id = "d02d745b";
-var renameThisApiKeyVariableLater = "4ffb87ac0809755abbda1cd0bebdb069	—";
+var app_id = "d02d745b";
+var app_key = "a27da899f17064b2672f7c38fa09c34e";
+
 $.ajax({
     url: "https://api.edamam.com/api/nutrition-details?app_id=' + app_id + '&app_key=' + app_key",
     method: "GET"
