@@ -5,62 +5,28 @@ var newIngredient = "cheese";
 var currentUser = "Guinea Pig";
 
 // app ID and api key for Edamam//
-// var app_Id = "d02d745b";
-// var renameThisApiKeyVariableLater = "4ffb87ac0809755abbda1cd0bebdb069	—";
-// $.ajax({
-//     url: "https://api.edamam.com/api/nutrition-details?app_id=' + app_id + '&app_key=' + app_key",
-//     method: "GET"
-//   }).then(function(response) {
-//     console.log(response);
-//   });
+
+var app_id = "d02d745b";
+var app_key = "a27da899f17064b2672f7c38fa09c34e";
+
+$.ajax({
+    url: "https://api.edamam.com/search?q=chicken&app_id=" + app_id + "&app_key=" + app_key,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
 
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
 
-$(document).on("click", "#submitButton", function () {
-    // ingredientLister();
-    databaseIngredients();
-});
+$.ajax({
+    url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
 
-
-// function ingredientLister() {
-//     $("#submitButton").on("click", function (event) {
-//         event.preventdefault();
-//         var newIngredient = $("#ingredientInput").val().trim();
-//         var ingredients = [];
-//         ingredients.append(newIngredient);
-//         var a = "<ul id='userIngredients' style='list-style-type:none'>"
-//         for (i = 0; i < ingredients.length; i++) {
-//             a.append("<li>" + ingredients[i]);
-//         }
-//         $("#searchBox").append(a);
-
-//     // add ingredient to search
-// })
-
-// name = $("#name-input").val().trim();
-
-
-function databaseIngredients() {
-    var database = firebase.database();
-    var addedIngredient = $("#ingredientInput").val().trim();
-
-    database.ref().push({
-        commonIngredients: addedIngredient,
-    })
-
-
-    // var myUserId = firebase.auth().currentUser.uid;
-    // var topUserPostsRef = firebase.database().ref('user-posts/' + myUserId).orderByChild('starCount');
-
-
-    // for (i = 0; i < newIngredient; i++) {
-    //     if (database.commonIngredients.indexOF(addedingredient) = -1) {
-    //         database.commonIngredients().push(addedingredient);
-    //     }
-    //     else {
-    //         database.commonIngredients.addedingredient++;
-    //     }
-    //     }
+function ingredientLister() {
+    // add ingredient to search
 }
 
 // var database = firebase.database();
