@@ -12,8 +12,10 @@ var app_key = "a27da899f17064b2672f7c38fa09c34e";
 $.ajax({
     url: "https://api.edamam.com/search?q=chicken&app_id=" + app_id + "&app_key=" + app_key,
     method: "GET"
-  }).then(function(response) {
+  })
+  .then(function(response) {
     console.log(response);
+    console.log(response.hits)
   });
 
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
