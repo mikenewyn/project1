@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,65 +9,85 @@
     <title>What to cook?!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body>
-      <!-- //header -->
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Whats in my fridge?
-      </h1>
-      <p class="subtitle">
-        Cook with  <strong> Bon Appetit</strong>!
-      </p>
-    </div>
-  </section>
+</head>
 
-
-<!-- container -->
-  <div class="container">
-    <div class="notification">
-<!-- top left tile where our serch button and ingredient list will be  -->
-  <div class="tile is-ancestor">
-    <div class="tile is-4 is-vertical is-parent">
-      <div class="tile is-child box">
-        <p class="title">Ingredients I have at Home:</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+<body>
+    <!-- //header -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                    our web page name
+            </h1>
+            <p class="subtitle">
+               Create a meal with  <strong> Bon Appetit</strong>!
+            </p>
         </div>
- <!-- botton left tile where our top recepies will populate -->
-      <div class="tile is-child box">
-        <p class="title">Top Recepies</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-      </div>
+    </section>
+
+
+    <!-- container -->
+    <div class="container">
+        <div class="notification">
+            <!-- top left tile where our serch button and ingredient list will be  -->
+            <div class="tile is-ancestor">
+                <div class="tile is-4 is-vertical is-parent">
+                    <div class="tile is-child box">
+                        <p class="title">Whats in my fridge?</p>
+
+                        <div class="control">
+                            <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
+                        </div>
+                        <br>
+                        <div class="control">
+                            <button id="submitButton" class="button is-primary">Submit</button>
+                        </div>
+                    </div>
+                    <!-- botton left tile where our top recepies will populate -->
+                    <div class="tile is-child box">
+                        <p class="title">     </p>
+                        <p>“One cannot think well, love well, sleep well, if one has not dined well.” 
+                                ― Virginia Woolf.</p>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <div class="tile is-child box">
+                        <p class="title">populate dynamically with search resullts</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar,
+                            at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero
+                            rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper
+                            odio felis ut quam.</p>
+                        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis.
+                            Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et
+                            sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus
+                            felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget
+                            varius ligula, at volutpat tortor.</p>
+                        <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus
+                            dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus.
+                            Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque
+                            non semper leo.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="tile is-parent">
-      <div class="tile is-child box">
-        <p class="title">populate dynamically with serch resullts</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-        <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
-</div>
 
 
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
-  <script>
-      // Initialize Firebase
-      var config = {
-          apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
-          authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
-          databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
-          projectId: "whats-in-my-fridge-335ea",
-          storageBucket: "whats-in-my-fridge-335ea.appspot.com",
-          messagingSenderId: "82405487027"
-      };
-      firebase.initializeApp(config);
-  </script>
-  <script src="assets/javascript/javascript.js"></script>
-  </body>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
+            authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
+            databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
+            projectId: "whats-in-my-fridge-335ea",
+            storageBucket: "whats-in-my-fridge-335ea.appspot.com",
+            messagingSenderId: "82405487027"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="assets/javascript/javascript.js"></script>
+</body>
+
 </html>
