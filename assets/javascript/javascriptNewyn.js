@@ -16,7 +16,7 @@ $(document).on("click", "#submitButton", function () {
         .then(function(response) {
 // To get image to append into the "Let's get cooking" div
         // console.log(response);
-        // var results = response.hits;
+        var results = response.hits;
         // console.log(results[0].recipe.image);
         // var d = $('<div>');
         // var images = $('<img>');
