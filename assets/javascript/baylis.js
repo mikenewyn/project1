@@ -3,6 +3,7 @@ var database = firebase.database();
 var ingredientList = ["cheese", "meat", "milk", "bread"];
 
 $("#submitButton").on("click", function () {
+
     for (i = 0; i < ingredientList.length; i++) {
         if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
             database.ref().push({
@@ -16,6 +17,13 @@ $("#submitButton").on("click", function () {
         }
     }
 });
+
+
+// Create a new post reference with an auto-generated id
+// var newPostRef = postListRef.push();
+// newPostRef.set({
+    // ...
+// });
 
 // $("#click-button").on("click", function() {
 //   clickCounter++;
