@@ -1,3 +1,5 @@
+var recipesOut = []
+
 // app ID and api key for Edamam//
 var edamam_id = "d02d745b";
 var edamam_key = "a27da899f17064b2672f7c38fa09c34e";
@@ -6,6 +8,7 @@ $(document).on("click", "#submitButton", function () {
     var ingredientList = "chicken";
     databaseIngredients();
     function databaseIngredients(){
+        event.preventDefault();
         $.ajax({
         url: "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + edamam_id + "&app_key=" + edamam_key,
         method: "GET"
@@ -13,13 +16,20 @@ $(document).on("click", "#submitButton", function () {
         .then(function(response) {
         console.log(response);
         var results = response.hits;
-        d.text(results[0].recipe.image);
-        for(var i = 0; i < results.length; i++){
+        console.log(results[0].recipe.image);
         var d = $('<div>');
-        var image = $('<img>');
-        d.addClass('recipe-area');
-        console.log(results.uri);
-        image.attr(result)
+        var images = $('<img>');
+        images.attr("src", results[0].recipe.image);
+        d.append(images);
+        $("#recipeResults").append(d);
+        
+        for(var i = 0; i < results.length; i++){
+            var d = $('<div>');
+            var images = $('<img>');
+            d.addClass('recipe-area');
+            images.attr('src', results[i].recipe.image);
+            d.append(images);
+            $("#recipeResults").append(d);
         }
     })
 }
