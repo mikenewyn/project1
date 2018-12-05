@@ -14,7 +14,9 @@ $.ajax({
   })
   .then(function(response) {
     console.log(response);
-    console.log(response.hits)
+    for(var i = 0; i < results.length; i++){
+    console.log(response.hits[i]);
+    }
   });
 
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
