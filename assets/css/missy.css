@@ -55,5 +55,6 @@ background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, F
     color: rgb(41, 37, 37);
     text-align: center;  
     padding-top: 4px;
+    margin-top: 25px;
 
 }
