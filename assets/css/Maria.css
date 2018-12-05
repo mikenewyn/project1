@@ -54,6 +54,7 @@ li:hover span{
     
 }
 
-container {
-    background: rgba(255, 255, 255, 0.26); 
+.recipeArea {
+ width: 250px;
+ height: 250px;
 }
