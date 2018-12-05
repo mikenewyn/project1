@@ -14,6 +14,7 @@
 
     <script src="assets/javascript/javascript.js"></script>
 </head>
+
 <body>
 
     <!-- //header -->
@@ -73,62 +74,48 @@
                     <div class="tile is-child box" id="searchBox">
                         <p class="title">Whats in my fridge?</p>
 
-                    <div id="ingredientContainer">
-                    <div class="tile is-child box">
-                        <p class="title">What's in my fridge?</p>
-                        <div class="control">
-                            <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
-                            <ul>
-                                <li><span>X</span>Ice</li>
-                            </ul>
+                        <div id="ingredientContainer">
+                            <div class="tile is-child box">
+                                <p class="title">What's in my fridge?</p>
+                                <div class="control">
+                                    <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
+                                    <ul id="currentIngredients">
+                                    </ul>
+                                </div>
+                                <br>
+                                <div class="control">
+                                    <button id="submitButton" class="button is-primary">Submit</button>
+                                </div>
+                            </div>
                         </div>
-                        <br>
-                        <div class="control">
-                            <button id="submitButton" class="button is-primary">Submit</button>
+                        <!-- botton left tile where our top recepies will populate -->
+                        <div class="tile is-child box">
+                            <p class="title"> </p>
+                            <p>“One cannot think well, love well, sleep well, if one has not dined well.”
+                                ― Virginia Woolf.</p>
                         </div>
                     </div>
                 </div>
-                    <!-- botton left tile where our top recepies will populate -->
+                <div class="tile is-parent">
                     <div class="tile is-child box">
-                        <p class="title"> </p>
-                        <p>“One cannot think well, love well, sleep well, if one has not dined well.”
-                            ― Virginia Woolf.</p>
+                        <p class="title">populate dynamically with search resullts</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar,
+                            at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero
+                            rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper
+                            odio felis ut quam.</p>
+                        <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis.
+                            Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et
+                            sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus
+                            felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget
+                            varius ligula, at volutpat tortor.</p>
+                        <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus
+                            dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus.
+                            Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque
+                            non semper leo.</p>
                     </div>
-                </div>
-                <!-- botton left tile where our top recepies will populate -->
-                <div class="tile is-child box">
-                    <p class="title"> </p>
-                    <p>“One cannot think well, love well, sleep well, if one has not dined well.”
-                        ― Virginia Woolf.</p>
-                </div>
-            </div>
-            <div class="tile is-parent">
-                <div class="tile is-child box">
-                    <p class="title">populate dynamically with search resullts</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar,
-                        at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero
-                        rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper
-                        odio felis ut quam.</p>
-                    <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis.
-                        Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et
-                        sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus
-                        felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget
-                        varius ligula, at volutpat tortor.</p>
-                    <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus
-                        dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus.
-                        Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque
-                        non semper leo.</p>
                 </div>
             </div>
         </div>
-
-    </div>
-    <!-- botton left tile where our top recepies will populate -->
-    <div class="tile is-child box">
-        <p class="title">Top Recipies</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor
-            vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-    </div>
     </div>
 
     <footer class="" style="background-color:gray;margin-top: 20%;bottom: 0;left: 0;right: 0; position: fixed;"> &copy;
@@ -137,16 +124,16 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
-        authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
-        databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
-        projectId: "whats-in-my-fridge-335ea",
-        storageBucket: "whats-in-my-fridge-335ea.appspot.com",
-        messagingSenderId: "82405487027"
-      };
-      firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
+            authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
+            databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
+            projectId: "whats-in-my-fridge-335ea",
+            storageBucket: "whats-in-my-fridge-335ea.appspot.com",
+            messagingSenderId: "82405487027"
+        };
+        firebase.initializeApp(config);
     </script>
 </body>
 
