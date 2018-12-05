@@ -51,4 +51,9 @@ li:hover span{
 
 *{
     font-family: 'Vidaloka', serif;
+    
+}
+
+container {
+    background: rgba(255, 255, 255, 0.26); 
 }
