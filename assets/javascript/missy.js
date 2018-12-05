@@ -8,6 +8,33 @@ var currentUser = "Guinea Pig";
 var app_id = "d02d745b";
 var app_key = "a27da899f17064b2672f7c38fa09c34e";
 
+$.ajax({
+    url: "https://api.edamam.com/search?q=chicken&app_id=" + app_id + "&app_key=" + app_key,
+    method: "GET"
+  })
+  .then(function(response) {
+    console.log(response);
+    console.log(response.hits)
+  });
+
+var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
+
+$(document).on("click", "#submitButton", function () {
+    // ingredientLister();
+    databaseIngredients();
+});
+
+
+
+var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
+
+$.ajax({
+    url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
+
 function ingredientLister() {
     // add ingredient to search
 }
@@ -121,3 +148,7 @@ function recipeFinder() {
 //     <input type="text" name="i" id="i" value="Enter ingredients separated by commas" size=31 style = "color:gray;font-size:11px;" onfocus = "if(this.style.color=='gray'){this.style.color='black';this.value='';}" onblur = "if(this.value==''){this.style.color='gray';this.value='Enter ingredients separated by commas';}" /> 
 //     <input type="submit" value="Search" style="font-size:11px;" /> <br />Powered by < a href = "http://www.recipepuppy.com" style = "font-size:10px;" > Recipe Puppy</a ></form >
 // >>>>>>> origin/mike.newyn
+
+
+
+

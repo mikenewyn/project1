@@ -34,21 +34,15 @@ background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, F
 
 }
 
-span {
-   background:rgba(146, 137, 137, 0.027);
-   height: 25px;
-   margin-right: 10px;
-   text-align: center;
-   display: inline-block;
-   width: 30px;
-   
+#footer {
+    position: variable;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: rgb(41, 37, 37);
+    text-align: center;  
 
-}
-
-li:hover span{
-    background: rgba(255, 0, 0, 0.63);
-}
-
-*{
-    font-family: 'Vidaloka', serif;
 }

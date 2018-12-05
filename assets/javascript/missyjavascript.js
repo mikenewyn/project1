@@ -5,8 +5,60 @@ var newIngredient = "cheese";
 var currentUser = "Guinea Pig";
 
 // app ID and api key for Edamam//
+
+
+var app_Id = "d02d745b";
+var renameThisApiKeyVariableLater = "4ffb87ac0809755abbda1cd0bebdb069	—";
+$.ajax({
+    url: "https://api.edamam.com/api/nutrition-details?app_id=' + app_id + '&app_key=' + app_key",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
+
+
+var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
+
+$(document).on("click", "#submitButton", function () {
+    // ingredientLister();
+    databaseIngredients();
+});
+
+
+// function ingredientLister() {
+//     $("#submitButton").on("click", function (event) {
+//         event.preventdefault();
+//         var newIngredient = $("#ingredientInput").val().trim();
+//         var ingredients = [];
+//         ingredients.append(newIngredient);
+//         var a = "<ul id='userIngredients' style='list-style-type:none'>"
+//         for (i = 0; i < ingredients.length; i++) {
+//             a.append("<li>" + ingredients[i]);
+//         }
+//         $("#searchBox").append(a);
+
+//     // add ingredient to search
+// })
+
+
 var app_id = "d02d745b";
 var app_key = "a27da899f17064b2672f7c38fa09c34e";
+
+$.ajax({
+    url: "https://api.edamam.com/search?q=chicken&app_id=" + app_id + "&app_key=" + app_key,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
+
+var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
+
+$.ajax({
+    url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3",
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
 
 function ingredientLister() {
     // add ingredient to search
@@ -121,3 +173,22 @@ function recipeFinder() {
 //     <input type="text" name="i" id="i" value="Enter ingredients separated by commas" size=31 style = "color:gray;font-size:11px;" onfocus = "if(this.style.color=='gray'){this.style.color='black';this.value='';}" onblur = "if(this.value==''){this.style.color='gray';this.value='Enter ingredients separated by commas';}" /> 
 //     <input type="submit" value="Search" style="font-size:11px;" /> <br />Powered by < a href = "http://www.recipepuppy.com" style = "font-size:10px;" > Recipe Puppy</a ></form >
 // >>>>>>> origin/mike.newyn
+
+
+
+
+// click on span to delete ingredient
+$("ul").on("click", "span", function(event){
+    $(this).parent().fadeOut(500,function(){
+        $(this).remove();
+    });
+    event.stopPropagation();
+});
+
+$("input").keypress(function(event){
+ if (event.which === 13){
+    var addIngredient = $(this).val();
+    $(this).val("");
+    $("ul").append("<li><span> X </span> " + addIngredient + "<li>")
+ }
+})
