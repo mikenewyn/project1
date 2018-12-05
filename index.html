@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel="stylesheet">
 
     <title>What'Cha Got</title>
 </head>
@@ -19,13 +20,12 @@
 <body>
 
     <!-- //header -->
-
     <img src="assets/css/images/foodbackground2.jpg" altref="Food" frameborder="0">
     <div class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation" class="section container">
             <div class="navbar-brand">
                 <h1 class="title">
-                    Create a meal with <em> What'Cha Got</em>!
+                    <i class="fas fa-utensils"></i> Create a meal with <em> What'Cha Got</em>!
                 </h1>
 
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -52,7 +52,6 @@
     </nav>
     </div>
 
-
     <!-- container of all tiles  -->
     <div class="container">
         <div class="notification">
@@ -64,32 +63,34 @@
                         <div class="control">
                             <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
                             <ul>
-                                <li><span>X </span> Ice</li>
+                                
                             </ul>
                         </div>
                         <br>
                         <div class="control">
-                            <button id="submitButton" class="button is-info">Submit</button>
+                            <button id="submitButton">Submit</button>
                         </div>
                     </div>
                     <!-- botton left tile where our top recepies will populate -->
                     <div class="tile is-child box">
-                        <p class="title">Top Recipes</p>
+                        <p class="title">  Favorite Recipes   <i class="fas fa-heart"></i></p>
                         <p id="topRecipes"></p>
                     </div>
                 </div>
                 <!-- end of left side .. this is were recipes go -->
                 <div class="tile is-parent">
                     <div class="tile is-child box">
-                        <p class="title">Let's get cooking!</p>
-                        <p id="recipeResults"></p>
+                        <p class="title"><i class="fas fa-utensils"  ></i>  Let's get cooking:</p>
+                        <div id="recipeResults"></div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
+  
+<div id="footer">
+    <p><i class="fas fa-utensils"  ></i><em> What'Cha Got  </em> </p>
+</div>  
     <!-- DON'T TUCH SCRIPT -->
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script>
@@ -104,14 +105,10 @@
         };
         firebase.initializeApp(config);
     </script>
+    <script src="assets/javascript/javascriptNewyn.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="assets/javascript/Maria.js"></script>
     <script src="assets/javascript/baylis.js"></script>
     <script src="assets/javascript/javascript.js"></script>
 </body>
-
-<div id="footer">
-    <p>Fresh & Delicious 2018</p>
-  </div>
-
 </html>

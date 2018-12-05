@@ -1,29 +1,43 @@
 var database = firebase.database();
 
-var ingredientList = ["cheese", "meat", "milk", "bread"];
+var ingredientList = ["cheese"];
+var databaseIngredients = { ingredientList };
 
-$("#submitButton").on("click", function () {
+database.ref().on("value", function (snapshot) {
+    databaseIngredients = snapshot.val();
+});
 
-    for (i = 0; i < ingredientList.length; i++) {
-        if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
-            database.ref().push({
-                commonIngredients: + ingredientList[i]
-            })
-        }
-        else {
-            database.ref().push({
-                commonIngredients: ingredientList[i]++
-            })
-        }
+$("input").keypress(function (event) {
+    if (event.which === 13) {
+        var ingredient = $(this).val();
+        ingredientList.push(ingredient)
     }
 });
 
+$("#submitButton").on("click", function () {
+    event.preventDefault();
+    if (databaseIngredients[ingredientList]) {
+        databaseIngredients[ingredientList]++;
+    }
+    else {
+        databaseIngredients[ingredientList] = 1;
+    }
+    database.ref().set(databaseIngredients)
 
-// Create a new post reference with an auto-generated id
-// var newPostRef = postListRef.push();
-// newPostRef.set({
-    // ...
-// });
+    //     for (i = 0; i < ingredientList.length; i++) {
+    //         if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
+    //             database.ref().push({
+    //                 commonIngredients: + ingredientList[i]
+    //             })
+    //         }
+    //         else {
+    //             database.ref().push({
+    //                 commonIngredients: ingredientList[i]++
+    //             })
+    //         }
+    //     }
+});
+
 
 // $("#click-button").on("click", function() {
 //   clickCounter++;

@@ -33,3 +33,22 @@ background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-2
 background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+
+span {
+   background:rgba(146, 137, 137, 0.027);
+   height: 25px;
+   margin-right: 10px;
+   text-align: center;
+   display: inline-block;
+   width: 30px;
+   
+
+}
+
+li:hover span{
+    background: rgba(255, 0, 0, 0.63);
+}
+
+*{
+    font-family: 'Vidaloka', serif;
+}
