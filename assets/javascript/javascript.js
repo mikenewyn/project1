@@ -4,38 +4,16 @@ var newIngredient = "cheese";
 
 var currentUser = "Guinea Pig";
 
-// app ID and api key for Edamam//
-var app_id = "d02d745b";
-var app_key = "a27da899f17064b2672f7c38fa09c34e";
-
-$.ajax({
-    url: "https://api.edamam.com/search?q=chicken&app_id=" + app_id + "&app_key=" + app_key,
-    method: "GET"
-  })
-  .then(function(response) {
-    console.log(response);
-    for(var i = 0; i < results.length; i++){
-    console.log(response.hits[i]);
-    }
-  });
-
 var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
 
-$(document).on("click", "#submitButton", function () {
-    // ingredientLister();
-    databaseIngredients();
-});
 
 
-
-var renameThisVariableForTheOtherApiKeyLaterToo = "other api key";
-
-$.ajax({
-    url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3",
-    method: "GET"
-  }).then(function(response) {
-    console.log(response);
-  });
+//$.ajax({
+ //   url: "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3",
+ //   method: "GET"
+ // }).then(function(response) {
+ //   console.log(response);
+ // });
 
 function ingredientLister() {
     // add ingredient to search
