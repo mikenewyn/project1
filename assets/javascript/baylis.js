@@ -1,31 +1,43 @@
 var database = firebase.database();
 
-// var config = {
-//     apiKey: "AIzaSyBwKeW4YmJyeHvSeCRgQrPvSayDP0yfvWs",
-//     authDomain: "whats-in-my-fridge-335ea.firebaseapp.com",
-//     databaseURL: "https://whats-in-my-fridge-335ea.firebaseio.com",
-//     projectId: "whats-in-my-fridge-335ea",
-//     storageBucket: "whats-in-my-fridge-335ea.appspot.com",
-//     messagingSenderId: "82405487027"
-// };
-// firebase.initializeApp(config);
+var ingredientList = ["cheese"];
+var databaseIngredients = { ingredientList };
 
-var ingredientList = ["cheese", "meat", "milk", "bread"];
+database.ref().on("value", function (snapshot) {
+    databaseIngredients = snapshot.val();
+});
 
-$("#submitButton").on("click", function () {
-    for (i = 0; i < ingredientList.length; i++) {
-        if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
-            database.ref().push({
-                commonIngredients: + ingredientList[i]
-            })
-        }
-        else {
-            database.ref().push({
-                commonIngredients: ingredientList[i]++
-            })
-        }
+$("input").keypress(function (event) {
+    if (event.which === 13) {
+        var ingredient = $(this).val();
+        ingredientList.push(ingredient)
     }
 });
+
+$("#submitButton").on("click", function () {
+    event.preventDefault();
+    if (databaseIngredients[ingredientList]) {
+        databaseIngredients[ingredientList]++;
+    }
+    else {
+        databaseIngredients[ingredientList] = 1;
+    }
+    database.ref().set(databaseIngredients)
+
+    //     for (i = 0; i < ingredientList.length; i++) {
+    //         if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
+    //             database.ref().push({
+    //                 commonIngredients: + ingredientList[i]
+    //             })
+    //         }
+    //         else {
+    //             database.ref().push({
+    //                 commonIngredients: ingredientList[i]++
+    //             })
+    //         }
+    //     }
+});
+
 
 // $("#click-button").on("click", function() {
 //   clickCounter++;
@@ -44,5 +56,3 @@ $("#submitButton").on("click", function () {
 // }, function(errorObject) {
 //   console.log("The read failed: " + errorObject.code);
 // });
-
-
