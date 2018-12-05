@@ -22,16 +22,16 @@ $(document).on("click", "#submitButton", function () {
         // var images = $('<img>');
         // images.attr("src", results[0].recipe.image);
         // d.append(images);
-        // $("#recipeResults").append(d);
- 
+        // $("#recipeResuconsole.log(this); lts").append(d);
 // For loop to get 10 images into array and append to "Let's get cooking"
         for(var i = 0; i < results.length; i++){
-            var d = $('<div>');
+            var d = $('<span>');
             var images = $('<img>');
-            d.addClass('recipe-area');
+            d.addClass('recipeArea');
             images.attr('src', results[i].recipe.image);
             d.append(images);
             $("#recipeResults").append(d);
+            
         }
     })
 }
