@@ -16,7 +16,7 @@ $(document).on("click", "#submitButton", function () {
         .then(function(response) {
 // To get image to append into the "Let's get cooking" div
         // console.log(response);
-        // var results = response.hits;
+        var results = response.hits;
         // console.log(results[0].recipe.image);
         // var d = $('<div>');
         // var images = $('<img>');
@@ -24,6 +24,7 @@ $(document).on("click", "#submitButton", function () {
         // d.append(images);
         // $("#recipeResults").append(d);
         var results = response.hits;
+
 // For loop to get 10 images into array and append to "Let's get cooking"
         for(var i = 0; i < results.length; i++){
             var d = $('<span>');
@@ -32,6 +33,7 @@ $(document).on("click", "#submitButton", function () {
             images.attr('src', results[i].recipe.image);
             d.append(images);
             $("#recipeResults").append(d);
+            
         }
     })
 }

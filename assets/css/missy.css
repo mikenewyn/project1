@@ -1,5 +1,6 @@
 img {
-    width: 100%;   
+    width: 100%;  
+    padding-bottom: 20px; 
     
 }
 
@@ -26,7 +27,16 @@ li:nth-child(2n){
     background:white;
 }
 
+#submitButton {
+    background-color: #536976;
+    font-size: 18px;
+    width: 100%;
+    color: white;
+    font-family: 'Vidaloka', serif;
+    padding: 9px;
+    border-radius: 4px;
 
+}
 body {
     background: #BBD2C5;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
@@ -44,5 +54,7 @@ background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, F
     background: linear-gradient(to left, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: rgb(41, 37, 37);
     text-align: center;  
+    padding-top: 4px;
+    margin-top: 25px;
 
 }
