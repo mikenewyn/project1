@@ -4,8 +4,8 @@ var recipesOut = []
 var edamam_id = "d02d745b";
 var edamam_key = "a27da899f17064b2672f7c38fa09c34e";
 $(document).on("click", "#submitButton", function () {
-    //var recipeInfo = $(this).attr('');
-    var ingredientList = "chicken";
+    
+    var ingredientList = $(this).attr();
     databaseIngredients();
     function databaseIngredients(){
         event.preventDefault();
@@ -22,7 +22,9 @@ $(document).on("click", "#submitButton", function () {
         // var images = $('<img>');
         // images.attr("src", results[0].recipe.image);
         // d.append(images);
-        // $("#recipeResuconsole.log(this); lts").append(d);
+        // $("#recipeResults").append(d);
+        var results = response.hits;
+
 // For loop to get 10 images into array and append to "Let's get cooking"
         for(var i = 0; i < results.length; i++){
             var d = $('<span>');
