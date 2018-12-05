@@ -49,6 +49,6 @@ li:hover span{
     background: rgba(255, 0, 0, 0.63);
 }
 
-button {
-    background: red;
+*{
+    font-family: 'Vidaloka', serif;
 }
