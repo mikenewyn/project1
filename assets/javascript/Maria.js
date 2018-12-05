@@ -14,6 +14,6 @@ $("input").keypress(function(event){
  if (event.which === 13){
     var addIngredient = $(this).val();
     $(this).val("");
-    $("ul").append("<li><span> X </span> " + addIngredient + "</li>")
+    $("ul").append("<li><span><i class='far fa-trash-alt'></i></span> " + addIngredient + "</li>")
  }
 });
