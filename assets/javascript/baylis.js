@@ -1,28 +1,37 @@
 var database = firebase.database();
 
-var ingredientList = ["cheese"];
-var databaseIngredients = { ingredientList };
+var ingredientList = [];
+var databaseIngredients = {
+    ingredients: {}
+};
 
 database.ref().on("value", function (snapshot) {
-    databaseIngredients = snapshot.val();
+    if (snapshot.val() && snapshot.val().ingredients) {
+        databaseIngredients = snapshot.val();
+    }
 });
 
 $("input").keypress(function (event) {
     if (event.which === 13) {
-        var ingredient = $(this).val();
-        ingredientList.push(ingredient)
+        var addIngredient = $(this).val().trim();
+        ingredientList.push(addIngredient);
+        console.log(ingredientList);
     }
 });
 
 $("#submitButton").on("click", function () {
     event.preventDefault();
-    if (databaseIngredients[ingredientList]) {
-        databaseIngredients[ingredientList]++;
+    for (i = 0; i < ingredientList.length; i++) {
+        if (databaseIngredients.ingredients[ingredientList[i]]) {
+            databaseIngredients.ingredients[ingredientList[i]]++;
+        }
+        else {
+            databaseIngredients.ingredients[ingredientList[i]] = 1;
+        }
+        // }
     }
-    else {
-        databaseIngredients[ingredientList] = 1;
-    }
-    database.ref().set(databaseIngredients)
+    console.log(databaseIngredients)
+    database.ref().set(databaseIngredients);
 
     //     for (i = 0; i < ingredientList.length; i++) {
     //         if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
