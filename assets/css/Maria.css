@@ -54,4 +54,10 @@ li:hover span{
 
 *{
     font-family: 'Vidaloka', serif;
+    
+}
+
+.recipeArea {
+ width: 250px;
+ height: 250px;
 }

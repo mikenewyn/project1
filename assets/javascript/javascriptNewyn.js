@@ -28,6 +28,7 @@ $(document).on("click", "#submitButton", function () {
         // d.append(images);
         // $("#recipeResults").append(d);
         var results = response.hits;
+
 // For loop to get 10 images into array and append to "Let's get cooking"
         for(var i = 0; i < results.length; i++){
             var d = $('<span>');
@@ -43,6 +44,7 @@ $(document).on("click", "#submitButton", function () {
             d.prepend(p);
             d.append(a);
             $("#recipeResults").append(d);
+            
         }
     })
 }
