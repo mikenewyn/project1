@@ -33,11 +33,14 @@ $(document).on("click", "#submitButton", function () {
             var d = $('<span>');
             var images = $('<img>');
             var a = $('<a>');
-            d.addClass('recipeArea');
-            images.addClass('recipeImage')
-            a.text(results[i].recipe.url);
+            a.append(images);
+            var p = $('<p>');
             images.attr('src', results[i].recipe.image);
-            d.append(images);
+            d.addClass('recipeArea');
+            a.attr("href", results[i].recipe.url);
+            a.attr("target", "_blank");
+            p.text(results[i].recipe.label);
+            d.prepend(p);
             d.append(a);
             $("#recipeResults").append(d);
         }
