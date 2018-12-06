@@ -1,11 +1,16 @@
-var recipesOut = []
+var ingredientList = []
 
+$("input").keypress(function (event) {
+    if (event.which === 13){
+        var addIngredient = $(this).val().trim();
+        ingredientList.push(addIngredient);
+
+    }
+});
 // app ID and api key for Edamam//
 var edamam_id = "d02d745b";
 var edamam_key = "a27da899f17064b2672f7c38fa09c34e";
 $(document).on("click", "#submitButton", function () {
-    
-    var ingredientList = $(this).attr();
     databaseIngredients();
     function databaseIngredients(){
         event.preventDefault();
@@ -14,9 +19,8 @@ $(document).on("click", "#submitButton", function () {
         method: "GET"
         })
         .then(function(response) {
-// To get image to append into the "Let's get cooking" div
-        // console.log(response);
-        var results = response.hits;
+// To get 1 image to append into the "Let's get cooking" div
+         console.log(response);
         // console.log(results[0].recipe.image);
         // var d = $('<div>');
         // var images = $('<img>');
@@ -28,9 +32,13 @@ $(document).on("click", "#submitButton", function () {
         for(var i = 0; i < results.length; i++){
             var d = $('<span>');
             var images = $('<img>');
+            var a = $('<a>');
             d.addClass('recipeArea');
+            images.addClass('recipeImage')
+            a.text(results[i].recipe.url);
             images.attr('src', results[i].recipe.image);
             d.append(images);
+            d.append(a);
             $("#recipeResults").append(d);
         }
     })

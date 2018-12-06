@@ -10,7 +10,7 @@ var database = firebase.database();
 // };
 // firebase.initializeApp(config);
 
-var ingredientList = ["cheese", "meat", "milk", "bread"];
+var ingredientList = [];
 
 $("#submitButton").on("click", function () {
     for (i = 0; i < ingredientList.length; i++) {
