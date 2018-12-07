@@ -15,7 +15,7 @@ $(document).on("click", "#submitButton", function () {
     function databaseIngredients() {
         event.preventDefault();
         $.ajax({
-            url: "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + edamam_id + "&app_key=" + edamam_key,
+            url: "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + edamam_id + "&app_key=" + edamam_key + "&to=30",
             method: "GET"
         })
         .then(function(response) {
@@ -48,7 +48,7 @@ $(document).on("click", "#submitButton", function () {
             d.prepend(p);
             //Adds image to the page.
             d.append(a);
-            $("#recipeResults").append(d);
+            $("#recipeResults").prepend(d);
             
         }
     })
