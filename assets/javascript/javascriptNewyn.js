@@ -12,11 +12,11 @@ var edamam_key = "a27da899f17064b2672f7c38fa09c34e";
 // On click event for getting recipes to append to page.
 $(document).on("click", "#submitButton", function () {
     databaseIngredients();
-    function databaseIngredients(){
+    function databaseIngredients() {
         event.preventDefault();
         $.ajax({
-        url: "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + edamam_id + "&app_key=" + edamam_key,
-        method: "GET"
+            url: "https://api.edamam.com/search?q=" + ingredientList + "&app_id=" + edamam_id + "&app_key=" + edamam_key,
+            method: "GET"
         })
         .then(function(response) {
 // To get 1 image to append into the "Let's get cooking" div
@@ -54,4 +54,3 @@ $(document).on("click", "#submitButton", function () {
     })
 }
     });
-
