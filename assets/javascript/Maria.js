@@ -1,5 +1,4 @@
 var list = []
-
 // click on span to delete ingredient
 $("ul").on("click", "span", function (event) {
     $(this).parent().fadeOut(500, function () {
@@ -9,7 +8,7 @@ $("ul").on("click", "span", function (event) {
     });
     event.stopPropagation();
 });
-
+//push ingredients on keypress
 $("input").keypress(function (event) {
     if (event.which === 13) {
         var addIngredient = $(this).val();
@@ -18,7 +17,15 @@ $("input").keypress(function (event) {
         listDisplay();
     };
 })
-
+//push ingredients on click
+$("#addIngredients").on("click",function (event) {
+        var addIngredient = $("#ingredientInput").val();
+        console.log($("#ingredientInput").val());
+        list.push(addIngredient);
+        $("#ingredientInput").val("");
+        listDisplay();
+})
+//appending my list of ingredients
 function listDisplay() {
     $("ul").empty();
     for (i = 0; i < list.length; i++) {
@@ -26,7 +33,7 @@ function listDisplay() {
         console.log(list[i]);
     }
 }
-
+// adding giphy API to append to page
 function addFood() {
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=cooking&api_key=kRsHuhDISov3OLv59PyTyJHBnpNQclEY&limit=100";
     $.ajax({
@@ -42,7 +49,6 @@ function addFood() {
             foodDiv.append(foodImage);
         });
 };
-
 $(function () {
     addFood();
 });
