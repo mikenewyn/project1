@@ -13,7 +13,7 @@ var edamam_key = "a27da899f17064b2672f7c38fa09c34e";
 $("ul").on("click", "span", function (event) {
     $(this).parent().fadeOut(500, function () {
         list.splice(list.indexOf($(this).attr("name")), 1);
-        console.log(list);
+        // console.log(list);
         listDisplay();
     });
     event.stopPropagation();
@@ -32,7 +32,7 @@ function listDisplay() {
     $("ul").empty();
     for (i = 0; i < list.length; i++) {
         $("ul").append("<li name='" + list[i] + "'><span><i class='far fa-trash-alt'></i></span> " + list[i] + "</li>")
-        console.log(list[i]);
+        // console.log(list[i]);
     }
 }
 
@@ -73,7 +73,7 @@ $("#submitButton").on("click", function () {
             databaseIngredients.ingredients[list[i]] = 1;
         }
     }
-    console.log(databaseIngredients)
+    // console.log(databaseIngredients)
     database.ref().set(databaseIngredients);
 });
 
@@ -88,7 +88,7 @@ $(document).on("click", "#submitButton", function () {
         })
             .then(function (response) {
                 // To get 1 image to append into the "Let's get cooking" div
-                console.log(response);
+                // console.log(response);
                 var results = response.hits;
                 // For loop to get 10 info bits into array and append to "Let's get cooking"
                 for (var i = 0; i < results.length; i++) {
