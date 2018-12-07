@@ -1,44 +1,26 @@
 var database = firebase.database();
 
-$("#submitButton").on("click", function () {
-    event.preventDefault();
-    if (databaseIngredients[ingredientList]) {
-        databaseIngredients[ingredientList]++;
-    }
-    else {
-        databaseIngredients[ingredientList] = 1;
-    }
-    database.ref().set(databaseIngredients)
+var ingredientList = [];
+var databaseIngredients = {
+    ingredients: {}
+};
 
-    //     for (i = 0; i < ingredientList.length; i++) {
-    //         if (database.ref(commonIngredients.indexOf(ingredientList[i]) === -1)) {
-    //             database.ref().push({
-    //                 commonIngredients: + ingredientList[i]
-    //             })
-    //         }
-    //         else {
-    //             database.ref().push({
-    //                 commonIngredients: ingredientList[i]++
-    //             })
-    //         }
-    //     }
+database.ref().on("value", function (snapshot) {
+    if (snapshot.val() && snapshot.val().ingredients) {
+        databaseIngredients = snapshot.val();
+    }
 });
 
-
-// $("#click-button").on("click", function() {
-//   clickCounter++;
-//   database.ref().set({
-//     clickCount: clickCounter
-//   });
-// });
-
-// // MAIN PROCESS + INITIAL CODE
-// // --------------------------------------------------------------------------------
-
-// database.ref().on("value", function(snapshot) {
-//   console.log(snapshot.val());
-//   $("#click-value").text(snapshot.val().clickCount);
-//   clickCounter = snapshot.val().clickCount;
-// }, function(errorObject) {
-//   console.log("The read failed: " + errorObject.code);
-// });
+$("#submitButton").on("click", function () {
+    event.preventDefault();
+    for (i = 0; i < ingredientList.length; i++) {
+        if (databaseIngredients.ingredients[ingredientList[i]]) {
+            databaseIngredients.ingredients[ingredientList[i]]++;
+        }
+        else {
+            databaseIngredients.ingredients[ingredientList[i]] = 1;
+        }
+    }
+    console.log(databaseIngredients)
+    database.ref().set(databaseIngredients);
+});

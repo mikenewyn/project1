@@ -1,6 +1,5 @@
 // <<<<<<< HEAD
-var newIngredient = "cheese";
-
+var newIngredient = "";
 
 var currentUser = "Guinea Pig";
 
