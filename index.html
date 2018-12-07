@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <!-- //header -->
     <img src="assets/css/images/foodbackground2.jpg" altref="Food" frameborder="0">
     <div class="container">
@@ -27,13 +26,12 @@
                     <i class="fas fa-utensils"></i> Create a meal with <em> What'Cha Got </em>!
                 </h1>
             </div>
-
             <!-- Add buttons to sign up and log in -->
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
                         <a href="adduser.html" class="button is-success">
-                            <strong><i class="fas fa-user-plus"  ></i></strong>
+                            <strong><i class="fas fa-user-plus"></i></strong>
                         </a>
                         <a href="login.html" class="button is-light">
                             Log in
@@ -55,6 +53,7 @@
                         <p class="title">My Ingredients:</p>
                         <div class="control">
                             <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
+                            <button class="button" id="addIngredients">Add Ingredients </button>
                             <ul>
                             </ul>
                         </div>
@@ -65,7 +64,8 @@
                     </div>
                     <!-- botton left tile where our top recepies will populate -->
                     <div class="tile is-child box">
-                        <div class="title">We <i class="far fa-laugh-beam"></i> We <i class="fas fa-sad-cry"></i> We <i class="fas fa-utensils"></i></div>
+                        <div class="title">We <i class="fas fa-grin-beam"></i> We <i class="fas fa-sad-cry"></i> We <i
+                                class="fas fa-utensils"></i></div>
                         <br>
                         <p id="food"></p>
                     </div>
@@ -81,11 +81,10 @@
             </div>
         </div>
     </div>
-
     <div id="footer">
         <p><i class="fas fa-utensils"></i><em> What'Cha Got </em> </p>
     </div>
-    <!-- DON'T TUCH SCRIPT -->
+    <!-- DON'T TOUCH SCRIPT -->
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script>
         // Initialize Firebase
