@@ -1,4 +1,3 @@
-
 var list = []
 
 // click on span to delete ingredient

@@ -20,9 +20,7 @@ $("#submitButton").on("click", function () {
         else {
             databaseIngredients.ingredients[ingredientList[i]] = 1;
         }
-        // }
     }
     console.log(databaseIngredients)
     database.ref().set(databaseIngredients);
-
 });
