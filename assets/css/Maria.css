@@ -19,6 +19,7 @@ li {
 li:nth-child(2n){
     background:white;
 }
+
 body {
     background: #BBD2C5;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
@@ -35,17 +36,16 @@ span {
 .recipeArea {
     height: 200px;
     width: 200px;
+
 }
+
 li:hover span{
     background: rgba(255, 0, 0, 0.63);
 }
 *{
     font-family: 'Vidaloka', serif; 
 }
-.recipeArea {
- width: 250px;
- height: 250px;
-}
+
 #addIngredients {
     width: 100%;
 }
