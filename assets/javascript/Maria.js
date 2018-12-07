@@ -9,7 +9,7 @@ $("ul").on("click", "span", function(event){
     event.stopPropagation();
     
 });
-
+//made a list append 
 $("input").keypress(function(event){
  if (event.which === 13){
     var addIngredient = $(this).val();
@@ -17,9 +17,7 @@ $("input").keypress(function(event){
     $("ul").append("<li><span><i class='far fa-trash-alt'></i></span> " + addIngredient + "</li>")
  }
 });
-
-
-
+//secont API appends to page!! 
 function addFood () {
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=cooking&api_key=kRsHuhDISov3OLv59PyTyJHBnpNQclEY&limit=100";
     $.ajax({
@@ -35,7 +33,6 @@ function addFood () {
                 foodDiv.append(foodImage);
         });
 };
-
 $(function() {
     addFood();
   });
