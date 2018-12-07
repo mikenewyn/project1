@@ -1,19 +1,5 @@
 var database = firebase.database();
 
-var ingredientList = ["cheese"];
-var databaseIngredients = { ingredientList };
-
-database.ref().on("value", function (snapshot) {
-    databaseIngredients = snapshot.val();
-});
-
-$("input").keypress(function (event) {
-    if (event.which === 13) {
-        var ingredient = $(this).val();
-        ingredientList.push(ingredient)
-    }
-});
-
 $("#submitButton").on("click", function () {
     event.preventDefault();
     if (databaseIngredients[ingredientList]) {
