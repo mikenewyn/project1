@@ -20,18 +20,14 @@
 
     <!-- //header -->
     <img src="assets/css/images/foodbackground2.jpg" altref="Food" frameborder="0">
-    <div class="container" >
+    <div class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation" class="section container">
             <div class="navbar-brand">
                 <h1 class="title">
-                    <i class="fas fa-utensils"></i>  Create a meal with <em> What'Cha Got  </em>!
+                    <i class="fas fa-utensils"></i> Create a meal with <em> What'Cha Got </em>!
                 </h1>
 
-                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+
             </div>
 
             <!-- Add buttons to sign up and log in -->
@@ -47,8 +43,8 @@
                     </div>
                 </div>
             </div>
-    </div>
-    </nav>
+
+        </nav>
     </div>
 
     <!-- container of all tiles  -->
@@ -59,11 +55,11 @@
                 <div class="tile is-4 is-vertical is-parent">
                     <div class="tile is-child box">
                         <p class="title">My Ingredients:</p>
-                        
+
                         <div class="control">
                             <input id="ingredientInput" class="input" type="text" placeholder="Ingredients">
                             <ul>
-                                
+
                             </ul>
                         </div>
                         <br>
@@ -73,8 +69,9 @@
                     </div>
                     <!-- botton left tile where our top recepies will populate -->
                     <div class="tile is-child box">
-                        <p class="title">  Favorite Recipes   <i class="fas fa-heart"></i></p>
-                        <p id="topRecipes"></p>
+                        <div class="title">We <i class="far fa-laugh-beam"></i> We <i class="fas fa-sad-cry"></i> We <i class="fas fa-utensils"></i></div>
+                        <br>
+                        <p id="food"></p>
                     </div>
                 </div>
                 <!-- end of left side .. this is were recipes go -->
@@ -88,10 +85,10 @@
             </div>
         </div>
     </div>
-  
-<div id="footer">
-    <p><i class="fas fa-utensils"  ></i><em> What'Cha Got  </em> </p>
-</div>  
+
+    <div id="footer">
+        <p><i class="fas fa-utensils"></i><em> What'Cha Got </em> </p>
+    </div>
     <!-- DON'T TUCH SCRIPT -->
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
     <script>
@@ -106,10 +103,11 @@
         };
         firebase.initializeApp(config);
     </script>
+    <script src="assets/javascript/baylis.js"></script>
     <script src="assets/javascript/javascriptNewyn.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="assets/javascript/Maria.js"></script>
-    <script src="assets/javascript/baylis.js"></script>
     <script src="assets/javascript/javascript.js"></script>
 </body>
+
 </html>
