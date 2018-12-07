@@ -44,7 +44,10 @@ span {
    
 
 }
-
+.recipeArea {
+    height: 200px;
+    width: 200px;
+}
 li:hover span{
     background: rgba(255, 0, 0, 0.63);
 }
@@ -57,4 +60,8 @@ li:hover span{
 .recipeArea {
  width: 250px;
  height: 250px;
+}
+
+#addIngredients {
+    width: 100%;
 }
