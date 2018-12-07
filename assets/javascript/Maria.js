@@ -35,7 +35,7 @@ function listDisplay() {
 }
 // adding giphy API to append to page
 function addFood() {
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=cooking&api_key=kRsHuhDISov3OLv59PyTyJHBnpNQclEY&limit=100";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=cooking&api_key=kRsHuhDISov3OLv59PyTyJHBnpNQclEY&limit=100";
     $.ajax({
         url: queryURL,
         method: "GET"
