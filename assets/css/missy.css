@@ -1,6 +1,7 @@
 img {
     width: 100%;  
     padding-bottom: 20px; 
+    
 }
 
 .container{
@@ -26,33 +27,6 @@ li:nth-child(2n){
     background:white;
 }
 
-li:hover span{
-    background: rgba(255, 0, 0, 0.63);
-}
-
-*{
-    font-family: 'Vidaloka', serif;  
-}
-body {
-    background: #BBD2C5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-span {
-   background:rgba(146, 137, 137, 0.027);
-   height: 25px;
-   margin-right: 10px;
-   text-align: center;
-   display: inline-block;
-   width: 30px;
-}
-
-.recipeArea {
-    height: 200px;
-    width: 200px;
-}
-
 #submitButton {
     background-color: #536976;
     font-size: 18px;
@@ -61,6 +35,13 @@ span {
     font-family: 'Vidaloka', serif;
     padding: 9px;
     border-radius: 4px;
+
+}
+body {
+    font-family: 'Vidaloka', serif; background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #footer {
@@ -74,4 +55,5 @@ span {
     text-align: center;  
     padding-top: 4px;
     margin-top: 25px;
+
 }
