@@ -26,12 +26,10 @@ li:nth-child(2n){
     background:white;
 }
 
-
 body {
     background: #BBD2C5;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 span {
@@ -41,23 +39,17 @@ span {
    text-align: center;
    display: inline-block;
    width: 30px;
-   
+}
 
-}
-.recipeArea {
-    height: 200px;
-    width: 200px;
-}
 li:hover span{
     background: rgba(255, 0, 0, 0.63);
 }
 
 *{
-    font-family: 'Vidaloka', serif;
-    
+    font-family: 'Vidaloka', serif;    
 }
 
 .recipeArea {
- width: 250px;
- height: 250px;
+ width: 200px;
+ height: 200px;
 }
