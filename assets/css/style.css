@@ -48,6 +48,10 @@ span {
    width: 30px;
 }
 
+#addIngredients {
+    width: 100%;
+}
+
 .recipeArea {
     height: 200px;
     width: 200px;

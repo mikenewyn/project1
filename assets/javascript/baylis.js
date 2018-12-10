@@ -25,19 +25,25 @@ var databaseIngredients = {
 //     database.ref().set(databaseIngredients);
 // });
 
-// function commonIngredientList() {
-//     var commonList = [];
-//     database.ref().on('value', function(snapshot) {
-//         snapshot.forEach(function(childsnapShot){
-//             var ingredientKey = childsnapShot.key;
-//             var ingredientSearched = childsnapShot.val();
-//             commonList.push(ingredientKey + ": " + ingredientSearched);
-//             console.log(commonList);
-//         });
-//     });
-// }
+function commonIngredientList() {
+    var commonList = [];
+    database.ref('ingredients').orderByValue().limitToLast(10).on('value', function(snapshot) {
+        console.log(snapshot.val());
+        snapshot.forEach(function(childsnapShot){
+            var ingredientKey = childsnapShot.key;
+            var ingredientSearched = childsnapShot.val();
+            console.log(childsnapShot.val())
+            commonList.push(ingredientKey + ": " + ingredientSearched);
+            console.log(commonList);
+            for (i = 9; i > commonList.length; i --) {
+                var a = ("<li>" + i)
+                $("#commonIngredients").append(a);
+            }
+        });
+    });
+}
 
-// commonIngredientList();
+commonIngredientList();
 
 // commentsRef.on('child_changed', function(data) {
 //     setCommentValues(postElement, data.key, data.val().text, data.val().author);

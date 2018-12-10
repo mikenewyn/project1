@@ -114,3 +114,19 @@ $(document).on("click", "#submitButton", function () {
             })
     }
 });
+
+function commonIngredientList() {
+    var commonList = [];
+    database.ref('ingredients').orderByValue().limitToLast(10).on('value', function(snapshot) {
+        console.log(snapshot.val());
+        snapshot.forEach(function(childsnapShot){
+            var ingredientKey = childsnapShot.key;
+            var ingredientSearched = childsnapShot.val();
+            console.log(childsnapShot.val())
+            commonList.push(ingredientKey + ": " + ingredientSearched);
+            console.log(commonList);
+        });
+    });
+}
+
+commonIngredientList();
