@@ -31,7 +31,6 @@ $(document).on("click", "#submitButton", function () {
                 // d.append(images);
                 // $("#recipeResults").append(d);
                 var results = response.hits;
-
                 // For loop to get 10 info bits into array and append to "Let's get cooking"
                 for (var i = 0; i < results.length; i++) {
                     var d = $('<span>');

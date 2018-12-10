@@ -57,6 +57,10 @@ span {
     width: 200px;
 }
 
+#commonIngredients {
+    margin-left: 15px;
+}
+
 #submitButton {
     background-color: #536976;
     font-size: 18px;

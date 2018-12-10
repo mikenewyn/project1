@@ -4,6 +4,7 @@ var database = firebase.database();
 var databaseIngredients = {
     ingredients: {}
 };
+var lowerCaseList = [];
 
 // app ID and api key for Edamam//
 var edamam_id = "d02d745b";
@@ -32,6 +33,7 @@ function listDisplay() {
     $("ul").empty();
     for (i = 0; i < list.length; i++) {
         $("ul").append("<li name='" + list[i] + "'><span><i class='far fa-trash-alt'></i></span> " + list[i] + "</li>")
+        lowerCaseList.push( list[i].toLowerCase());
         // console.log(list[i]);
     }
 }
@@ -56,7 +58,6 @@ $(function () {
     addFood();
 });
 
-
 database.ref().on("value", function (snapshot) {
     if (snapshot.val() && snapshot.val().ingredients) {
         databaseIngredients = snapshot.val();
@@ -65,12 +66,12 @@ database.ref().on("value", function (snapshot) {
 
 $("#submitButton").on("click", function () {
     event.preventDefault();
-    for (i = 0; i < list.length; i++) {
-        if (databaseIngredients.ingredients[list[i]]) {
-            databaseIngredients.ingredients[list[i]]++;
+    for (i = 0; i < lowerCaseList.length; i++) {
+        if (databaseIngredients.ingredients[lowerCaseList[i]]) {
+            databaseIngredients.ingredients[lowerCaseList[i]]++;
         }
         else {
-            databaseIngredients.ingredients[list[i]] = 1;
+            databaseIngredients.ingredients[lowerCaseList[i]] = 1;
         }
     }
     // console.log(databaseIngredients)
@@ -80,10 +81,11 @@ $("#submitButton").on("click", function () {
 // On click event for getting recipes to append to page.
 $(document).on("click", "#submitButton", function () {
     databaseIngredients();
+    $("#recipeResults").empty();
     function databaseIngredients() {
         event.preventDefault();
         $.ajax({
-            url: "https://api.edamam.com/search?q=" + list + "&app_id=" + edamam_id + "&app_key=" + edamam_key,
+            url: "https://api.edamam.com/search?q=" + list + "&app_id=" + edamam_id + "&app_key=" + edamam_key + "&to=30",
             method: "GET"
         })
             .then(function (response) {
@@ -117,15 +119,20 @@ $(document).on("click", "#submitButton", function () {
 
 function commonIngredientList() {
     var commonList = [];
-    database.ref('ingredients').orderByValue().limitToLast(10).on('value', function(snapshot) {
+    database.ref('ingredients').orderByValue().limitToLast(11).on('value', function (snapshot) {
         console.log(snapshot.val());
-        snapshot.forEach(function(childsnapShot){
+        snapshot.forEach(function (childsnapShot) {
             var ingredientKey = childsnapShot.key;
-            var ingredientSearched = childsnapShot.val();
-            console.log(childsnapShot.val())
-            commonList.push(ingredientKey + ": " + ingredientSearched);
-            console.log(commonList);
+            // var ingredientSearched = childsnapShot.val();
+            // console.log(childsnapShot.val())
+            commonList.push(ingredientKey);
+            // console.log(commonList);
+    $("#commonIngredients").empty();
         });
+        for (i = 10; i > 0; i--) {
+            var a = ("<li>" + commonList[i]);
+            $("#commonIngredients").append(a);
+        }
     });
 }
 
