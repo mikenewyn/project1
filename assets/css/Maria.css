@@ -36,7 +36,6 @@ span {
 .recipeArea {
     height: 200px;
     width: 200px;
-
 }
 
 li:hover span{
@@ -45,7 +44,6 @@ li:hover span{
 *{
     font-family: 'Vidaloka', serif; 
 }
-
 #addIngredients {
     width: 100%;
 }
