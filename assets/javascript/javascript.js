@@ -29,6 +29,16 @@ $("input").keypress(function (event) {
     };
 })
 
+//push ingredients on click
+$("#addIngredients").on("click",function (event) {
+    var addIngredient = $("#ingredientInput").val();
+    console.log($("#ingredientInput").val());
+    list.push(addIngredient);
+    $("#ingredientInput").val("");
+    listDisplay();
+})
+
+//appending my list of ingredients
 function listDisplay() {
     $("ul").empty();
     for (i = 0; i < list.length; i++) {
@@ -85,7 +95,7 @@ $(document).on("click", "#submitButton", function () {
     function databaseIngredients() {
         event.preventDefault();
         $.ajax({
-            url: "https://api.edamam.com/search?q=" + list + "&app_id=" + edamam_id + "&app_key=" + edamam_key + "&to=30",
+            url: "https://api.edamam.com/search?q=" + list + "&app_id=" + edamam_id + "&app_key=" + edamam_key + "&to=12",
             method: "GET"
         })
             .then(function (response) {
@@ -120,7 +130,7 @@ $(document).on("click", "#submitButton", function () {
 function commonIngredientList() {
     var commonList = [];
     database.ref('ingredients').orderByValue().limitToLast(11).on('value', function (snapshot) {
-        console.log(snapshot.val());
+        // console.log(snapshot.val());
         snapshot.forEach(function (childsnapShot) {
             var ingredientKey = childsnapShot.key;
             // var ingredientSearched = childsnapShot.val();
