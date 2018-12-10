@@ -17,6 +17,7 @@ $("input").keypress(function (event) {
         listDisplay();
     };
 })
+
 //push ingredients on click
 $("#addIngredients").on("click",function (event) {
         var addIngredient = $("#ingredientInput").val();
@@ -25,6 +26,7 @@ $("#addIngredients").on("click",function (event) {
         $("#ingredientInput").val("");
         listDisplay();
 })
+
 //appending my list of ingredients
 function listDisplay() {
     $("ul").empty();
@@ -35,7 +37,7 @@ function listDisplay() {
 }
 // adding giphy API to append to page
 function addFood() {
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=cooking&api_key=kRsHuhDISov3OLv59PyTyJHBnpNQclEY&limit=100";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=cooking&api_key=kRsHuhDISov3OLv59PyTyJHBnpNQclEY&limit=100";
     $.ajax({
         url: queryURL,
         method: "GET"
