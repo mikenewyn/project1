@@ -29,6 +29,16 @@ $("input").keypress(function (event) {
     };
 })
 
+//push ingredients on click
+$("#addIngredients").on("click",function (event) {
+    var addIngredient = $("#ingredientInput").val();
+    console.log($("#ingredientInput").val());
+    list.push(addIngredient);
+    $("#ingredientInput").val("");
+    listDisplay();
+})
+
+//appending my list of ingredients
 function listDisplay() {
     $("ul").empty();
     for (i = 0; i < list.length; i++) {

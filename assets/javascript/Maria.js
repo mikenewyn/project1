@@ -17,6 +17,7 @@ $("input").keypress(function (event) {
         listDisplay();
     };
 })
+
 //push ingredients on click
 $("#addIngredients").on("click",function (event) {
         var addIngredient = $("#ingredientInput").val();
@@ -25,6 +26,7 @@ $("#addIngredients").on("click",function (event) {
         $("#ingredientInput").val("");
         listDisplay();
 })
+
 //appending my list of ingredients
 function listDisplay() {
     $("ul").empty();
